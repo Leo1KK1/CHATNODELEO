@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chat - Práctica Sockets</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+</head>
+<body>
+
+  <div class="login-screen" id="loginScreen">
+    <h2 class="header-chat">Bienvenido al chat DLEO</h2>
+    <input id="usernameInput" placeholder="Ingresa tu nombre" />
+    <button id="enterBtn">Entrar</button>
+  </div>
+
+  <div class="chat-screen hidden" id="chatScreen">
+    <div id="app-chat">
+      <div class="chat-users">
+        <h3>Usuarios conectados:</h3>
+        <ul id="usersList" class="users-list"></ul>
+      </div>
+      <div id="ventana-mensajes">
+        <div id="output"></div>
+        <div id="escribiendo-mensaje"></div>
+      </div>
+      <div class="chat-input-container">
+        <input id="messageInput" placeholder="Escribe un mensaje..." autocomplete="off" />
+        <button id="sendBtn">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Socket.IO cliente (servido por el servidor) -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

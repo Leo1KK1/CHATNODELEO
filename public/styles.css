@@ -1,0 +1,206 @@
+body {
+    font-family: 'Nunito', Arial, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd 0%, #f5f5f5 100%);
+}
+
+h2 {
+    font-size: 22px;
+    padding: 18px 20px;
+    color: #1565c0;
+    text-align: center;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+}
+
+#panel-bienvenida {
+    padding: 20% 20%;
+    text-align: center;
+}
+
+#usuario {
+    color: #DE9631;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+#persona {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+}
+
+#app-chat {
+    max-width: 600px;
+    margin: 36px auto;
+    border: none;
+    box-shadow: 0 4px 24px rgba(21,101,192,0.10);
+    border-radius: 16px;
+    padding: 24px 28px 18px 28px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.chat-users {
+    background: #f1f8e9;
+    border-radius: 10px;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(76,175,80,0.08);
+}
+.chat-users h3 {
+    color: #388e3c;
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.users-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.users-list li {
+    color: #1565c0;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+    padding-left: 8px;
+}
+
+#ventana-mensajes {
+    height: 260px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    border: none;
+    padding: 16px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(21,101,192,0.06);
+}
+
+#output p {
+    background: #e3f2fd;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 8px 0;
+    color: #333;
+    font-size: 16px;
+    box-shadow: 0 1px 4px rgba(21,101,192,0.04);
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#output strong {
+    color: #1565c0;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+label {
+    box-sizing: border-box;
+    display: block;
+    padding: 10px 20px;
+}
+
+input {
+    padding: 10px 18px;
+    box-sizing: border-box;
+    background: #f9f9f9;
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+    font-family: Nunito;
+    font-size: 16px;
+    margin: 0;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: 0;
+    border-color: #1565c0;
+}
+
+button {
+    background: #1565c0;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    padding: 12px 0;
+    width: 120px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 0;
+    box-shadow: 0 2px 6px rgba(21,101,192,0.08);
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #0d47a1;
+}
+
+.nube {
+    background-color: #1565c0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(21,101,192,0.12);
+    display: inline-block;
+    padding: 10px 24px;
+    position: relative;
+    vertical-align: top;
+    color: #ffffff;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box {
+    float: right;
+    margin: 5px 45px 5px 26px;
+    position: relative;
+    top: -20px;
+}
+
+/* Encabezado y chat */
+.header-chat {
+    text-align: center;
+    font-size: 22px;
+    color: #1565c0;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.usuario-nombre {
+    color: #DE9631;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.mensaje-autor {
+    color: #1565c0;
+    font-weight: bold;
+}
+
+.mensaje-texto {
+    color: #333;
+    font-size: 16px;
+}
+
+.mensaje-hora {
+    color: #aaa;
+    font-size: 12px;
+    align-self: flex-end;
+    margin-top: 2px;
+}
+
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
