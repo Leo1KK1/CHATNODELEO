@@ -44,6 +44,45 @@ messageInput.addEventListener('input', () => {
     socket.emit('typing', false);
   }, 800);
 });
+// Mostrar quién está escribiendo (integración con el HTML proporcionado)
+const typingDiv = document.getElementById('typing');
+let typingTimeout;
+
+socket.on('typing', ({ username, isTyping }) => {
+  if (isTyping) {
+    typingDiv.textContent = `${username} está escribiendo...`;
+    clearTimeout(typingTimeout);
+    typingTimeout = setTimeout(() => {
+      typingDiv.textContent = '';
+    }, 2000);
+  } else {
+    typingDiv.textContent = '';
+  }
+});
+
+// Detectar cuando el usuario está escribiendo
+// (asegúrate de que sólo exista una declaración de messageInput)
+let typing = false;
+let lastTypingTime;
+
+function sendTyping(isTyping) {
+  socket.emit('typing', isTyping);
+}
+
+messageInput.addEventListener('input', () => {
+  if (!typing) {
+    typing = true;
+    sendTyping(true);
+  }
+  lastTypingTime = Date.now();
+  setTimeout(() => {
+    const now = Date.now();
+    if (now - lastTypingTime >= 1000) {
+      typing = false;
+      sendTyping(false);
+    }
+  }, 1000);
+});
 
 function sendMessage() {
   const msg = messageInput.value.trim();
