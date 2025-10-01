@@ -15,7 +15,7 @@ const usersList = document.getElementById('usersList');
 const messagesEl = document.getElementById('messages');
 const messageInput = document.getElementById('messageInput');
 const sendBtn = document.getElementById('sendBtn');
-const typingEl = document.getElementById('typing');
+const typingDiv = document.getElementById('escribiendo-mensaje');
 
 let myName = null;
 let typingTimer = null;
@@ -44,10 +44,8 @@ messageInput.addEventListener('input', () => {
     socket.emit('typing', false);
   }, 800);
 });
-// Mostrar quién está escribiendo (integración con el HTML proporcionado)
-const typingDiv = document.getElementById('typing');
+// Mostrar quién está escribiendo (usando el div con id 'escribiendo-mensaje')
 let typingTimeout;
-
 socket.on('typing', ({ username, isTyping }) => {
   if (isTyping) {
     typingDiv.textContent = `${username} está escribiendo...`;
